@@ -5,7 +5,7 @@
 	<artifactId>jhove</artifactId>
 	<name>JHOVE - JSTOR/Harvard Object Validation Environment</name>
 	<description>A patched build of JHOVE, making it a stand-alone Self-Contained JAR that can be run more easily.</description>
-	<version>1.5-SCJ</version>
+	<version>1.6-SCJ</version>
 	<url>http://hul.harvard.edu/jhove/</url>
 	<!-- checkout, OR download - http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%201.4/jhove-1_4.zip?use_mirror=switch -->
 	<scm>
