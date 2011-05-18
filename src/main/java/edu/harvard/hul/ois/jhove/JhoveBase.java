@@ -303,10 +303,10 @@ public class JhoveBase
                     }
                 }
                 
-                // get the MIX version. if not specified, defaults to 0.2. 
+                // get the MIX version. if not specified, defaults to 2.0. 
                 _mixVsn = configHandler.getMixVsn ();
                 if (_mixVsn == null) {
-                    _mixVsn = "0.2";   // default
+                    _mixVsn = "2.0";   // default
                 }
                 
                 // Get the maximum number of bytes to examine when doing
@@ -492,6 +492,7 @@ public class JhoveBase
     	}
     
     	handler.showFooter ();                /* Show handler footer info. */
+    	handler.close();
     }
 
     /* Returns false if processing should be aborted.
