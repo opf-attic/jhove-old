@@ -5,9 +5,8 @@
 	<artifactId>jhove</artifactId>
 	<name>JHOVE - JSTOR/Harvard Object Validation Environment</name>
 	<description>A patched build of JHOVE, making it a stand-alone Self-Contained JAR that can be run more easily.</description>
-	<version>1.6-SCJ</version>
+	<version>1.6-SNAPSHOT-SCJ</version>
 	<url>http://hul.harvard.edu/jhove/</url>
-	<!-- checkout, OR download - http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%201.4/jhove-1_4.zip?use_mirror=switch -->
 	<scm>
 		<connection>scm:cvs:pserver:anonymous:@jhove.cvs.sourceforge.net:/cvsroot/jhove:jhove</connection>
 	</scm>
@@ -48,7 +47,7 @@
 				<version>2.4.1</version>
 				<executions>
 					<execution>
-						<id>copy-resources</id>
+						<id>copy-java-classes</id>
 						<phase>generate-sources</phase>
 						<goals>
 							<goal>copy-resources</goal>
@@ -58,7 +57,7 @@
 							<resources>
 								<resource>
 									<directory>${basedir}/target/checkout/classes</directory>
-									<filtering>false</filtering>
+									<filtering>true</filtering>
 									<!--  Exclude the files we wish to patch -->
 									<excludes>
 										<exclude>**/JhoveBase.java</exclude>
@@ -104,39 +103,6 @@
                     </archive>
                 </configuration>
             </plugin>
-            <!-- This is not really needed, as JHOVE does not have dependencies that need packaging.
-            <plugin>
-                <groupId>org.dstovall</groupId>
-                <artifactId>onejar-maven-plugin</artifactId>
-                <version>1.4.4</version>
-                <executions>
-                    <execution>
-                        <configuration>
-                            <!- - Optional - ->
-                            <onejarVersion>0.97</onejarVersion>
-                            <!- - Optional, use only if you need to include native libraries (dll's) - ->
-                            <!- - 
-                            <binlibs>
-                                <fileSet>
-                                    <directory>${project.build.directory}/dllextract</directory>
-                                    <includes>
-                                        <include>test.dll</include>
-                                    </includes>
-                                </fileSet>
-                            </binlibs>
-                             - ->
-                            <!- - Optional, default is false - ->
-                            <attachToBuild>true</attachToBuild>
-                            <!- - Optional, default is "onejar" - ->
-                            <classifier>onejar</classifier>
-                        </configuration>
-                        <goals>
-                            <goal>one-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-             -->
 		</plugins>
 	</build>
 	<dependencies>
@@ -147,10 +113,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<pluginRepositories>
-        <pluginRepository>
-            <id>onejar-maven-plugin.googlecode.com</id>
-            <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
-        </pluginRepository>
-    </pluginRepositories>
 </project>
