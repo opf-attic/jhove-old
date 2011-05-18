@@ -4,12 +4,22 @@
 	<groupId>edu.harvard.hul.ois.jhove</groupId>
 	<artifactId>jhove</artifactId>
 	<name>JHOVE - JSTOR/Harvard Object Validation Environment</name>
-	<version>1.2</version>
+	<description>JHOVE provides functions to perform format-specific identification, validation, and characterization of digital objects.</description>
+ 	<licenses>
+	<license>
+    <name>GNU LGPL</name>
+    <url>http://www.gnu.org/licenses/lgpl.txt</url>
+    <distribution>repo</distribution>
+  </license>
+</licenses>
+	<version>1.6</version>
 	<properties>
-     <download.url>http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%201.2/jhove-1_2.zip?use_mirror=switch</download.url>
+     <download.url>http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%201.6/jhove-1_6.zip?use_mirror=switch</download.url>
+    <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
     </properties>
 	<url>http://hul.harvard.edu/jhove/</url>
 	<scm>
+		<url>http://sourceforge.net/projects/jhove/</url>
 		<connection>scm:cvs:pserver:anonymous:@jhove.cvs.sourceforge.net:/cvsroot/jhove:jhove</connection>
 	</scm>
 	<build>
@@ -132,6 +142,21 @@
                     </archive>
                 </configuration>
             </plugin>
+<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<configuration>
+				<use>false</use>
+			</configuration>
+			<executions>
+				<execution>
+					<id>attach-javadocs</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
 		</plugins>
 	</build>
 	<dependencies>
