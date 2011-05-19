@@ -1,15 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>edu.harvard.hul.ois.jhove</groupId>
+	<groupId>net.sourceforge.jhove</groupId>
 	<artifactId>jhove</artifactId>
 	<name>JHOVE - JSTOR/Harvard Object Validation Environment</name>
-	<description></description>
-	<version>1.6-SNAPSHOT</version>
+	<description>JHOVE provides functions to perform format-specific identification, validation, and characterization of digital objects.</description>
+	<licenses>
+		<license>
+			<name>GNU Library or Lesser General Public License (LGPL)</name>
+			<url>http://www.gnu.org/licenses/lgpl.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 	<url>http://hul.harvard.edu/jhove/</url>
 	<scm>
+		<url>http://sourceforge.net/projects/jhove/</url>
 		<connection>scm:cvs:pserver:anonymous:@jhove.cvs.sourceforge.net:/cvsroot/jhove:jhove</connection>
 	</scm>
+	<version>1.6-SNAPSHOT</version>
 	<build>
 		<!-- <sourceDirectory>target/generated-sources/main/java</sourceDirectory> -->
 		<plugins>
@@ -58,7 +66,7 @@
 								<resource>
 									<directory>${basedir}/target/checkout/classes</directory>
 									<filtering>true</filtering>
-									<!--  Exclude the files we wish to patch -->
+									<!-- Exclude the files we wish to patch -->
 								</resource>
 							</resources>
 						</configuration>
@@ -87,16 +95,16 @@
 				</executions>
 			</plugin>
 			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>Jhove</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>Jhove</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
