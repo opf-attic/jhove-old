@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.sourceforge.jhove</groupId>
+	<groupId>org.opf-labs.jhove</groupId>
 	<artifactId>jhove</artifactId>
 	<name>JHOVE - JSTOR/Harvard Object Validation Environment</name>
 	<description>JHOVE provides functions to perform format-specific identification, validation, and characterization of digital objects.</description>
@@ -17,13 +17,13 @@
 		<url>http://sourceforge.net/projects/jhove/</url>
 		<connection>scm:cvs:pserver:anonymous:@jhove.cvs.sourceforge.net:/cvsroot/jhove:jhove</connection>
 	</scm>
-	<version>1.6</version>
+	<version>1.10b2</version>
 	<properties>
-		<download.url>http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%201.6/jhove-1_6.zip?use_mirror=switch</download.url>
+		<download.url>http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%201.10b2/jhove-1_10b2.zip?use_mirror=kent</download.url>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 	</properties>
 	<build>
-		<!-- <sourceDirectory>target/generated-sources/main/java</sourceDirectory> -->
+		<!-- <sourceDirectory>target/generated-sources/sourceforge/main/java</sourceDirectory> -->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -49,7 +49,7 @@
 
 								<!-- unpack classes -->
 								<unzip src="target/jhove-${project.version}-dist.zip"
-									dest="target/generated-sources/main/java">
+									dest="target/generated-sources/sourceforge/main/java">
 									<patternset>
 										<include name="jhove/classes/**/*.java" />
 									</patternset>
@@ -58,7 +58,7 @@
 
 								<!-- unpack tests -->
 								<unzip src="target/jhove-${project.version}-dist.zip"
-									dest="target/generated-sources/test/java">
+									dest="target/generated-sources/sourceforge/test/java">
 									<patternset>
 										<include name="jhove/tests/**/*.java" />
 									</patternset>
@@ -92,7 +92,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/generated-sources/main/java</outputDirectory>
+							<outputDirectory>${basedir}/target/generated-sources/sourceforge/main/java</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${basedir}/target/checkout/classes</directory>
@@ -124,7 +124,7 @@
 									${basedir}/src/main/java
                            </source>
 								<source>
-									${basedir}/target/generated-sources/main/java
+									${basedir}/target/generated-sources/sourceforge/main/java
                            </source>
 							</sources>
 						</configuration>
