@@ -17,9 +17,12 @@
 		<url>http://sourceforge.net/projects/jhove/</url>
 		<connection>scm:cvs:pserver:anonymous:@jhove.cvs.sourceforge.net:/cvsroot/jhove:jhove</connection>
 	</scm>
-	<version>1.10b2</version>
+	<version>${jhove.version}</version>
 	<properties>
-		<download.url>http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%201.10b2/jhove-1_10b2.zip?use_mirror=kent</download.url>
+		<jhove.version.major>1</jhove.version.major>
+		<jhove.version.minor>10</jhove.version.minor>
+		<jhove.version>${jhove.version.major}.${jhove.version.minor}</jhove.version>
+		<download.url>http://downloads.sourceforge.net/project/jhove/jhove/JHOVE%20${jhove.version}/jhove-${jhove.version.major}_${jhove.version.minor}.zip?use_mirror=autoselect</download.url>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 	</properties>
 	<build>
@@ -44,11 +47,11 @@
 
 								<!-- get source jar -->
 								<mkdir dir="target" />
-								<get src="${download.url}" dest="target/jhove-${project.version}-dist.zip"
+								<get src="${download.url}" dest="target/jhove-${jhove.version}-dist.zip"
 									usetimestamp="true" ignoreerrors="true" />
 
 								<!-- unpack classes -->
-								<unzip src="target/jhove-${project.version}-dist.zip"
+								<unzip src="target/jhove-${jhove.version}-dist.zip"
 									dest="target/generated-sources/sourceforge/main/java">
 									<patternset>
 										<include name="jhove/classes/**/*.java" />
@@ -57,7 +60,7 @@
 								</unzip>
 
 								<!-- unpack tests -->
-								<unzip src="target/jhove-${project.version}-dist.zip"
+								<unzip src="target/jhove-${jhove.version}-dist.zip"
 									dest="target/generated-sources/sourceforge/test/java">
 									<patternset>
 										<include name="jhove/tests/**/*.java" />
@@ -66,7 +69,7 @@
 								</unzip>
 
 								<!-- unpack all -->
-								<unzip src="target/jhove-${project.version}-dist.zip"
+								<unzip src="target/jhove-${jhove.version}-dist.zip"
 									dest="target/jhove2-unpacked">
 									<patternset>
 										<include name="**/*.*" />
