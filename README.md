@@ -3,6 +3,8 @@ JHOVE
 
 This is a small project to take the JHOVE source code and Mavenise it, so that snapshots and official releases can be published.
 
+NOTE: This repository has been superceded by the offical JHove repo: https://github.com/gmcgath/jhove
+
 jhove-releases
 --------------
 This is a pom that can be used to build Maven bundles from JHOVE release packages.
